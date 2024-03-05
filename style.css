@@ -8,11 +8,22 @@
 }
 .calculatorContainer{
     display: flex;
-    padding: 20px;
+    padding: 50px;
     width: 50%;
     height: auto;
     justify-content: space-between;
     flex-direction: column;
+    border: solid 2px black;
     ;
+}
+ 
+.buttonRow {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+}
+button{
+    margin: 15px;
+    padding: 15px;
 }
 
