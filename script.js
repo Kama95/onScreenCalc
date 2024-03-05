@@ -29,6 +29,8 @@ function populateDisplay(){
     buttons.forEach(button => {
     button.addEventListener('click', ()=>{
         display.textContent += button.textContent,'';
+        firstNum = parseInt (button.textContent,10);
+        console.log (firstNum);
           })
     })
 }
