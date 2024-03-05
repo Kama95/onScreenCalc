@@ -12,3 +12,11 @@ function divide(a,b){
     return a/b;
     return a%b;
 }
+
+let firstNum;
+let operation;
+let secondNum;
+
+function operator (operator,firstNum,secondNum){
+    
+}
