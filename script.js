@@ -18,5 +18,5 @@ let operation;
 let secondNum;
 
 function operator (operator,firstNum,secondNum){
-    
+    add()
 }
