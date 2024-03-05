@@ -1,5 +1,7 @@
 const display = document.querySelector('.display');
 const buttons= document.querySelectorAll('button:not(.clear, .equalSign');
+const clearButton=document.querySelector('.clear')
+
 function add(a,b){
     return a+b;
 }
@@ -31,5 +33,11 @@ function populateDisplay(){
     })
 }
 
+function clearDisplay(){
+    clearButton.addEventListener('click', ()=>{
+        display.textContent =' ';
+    })
+}
+clearDisplay();
 
 populateDisplay();
