@@ -1,3 +1,5 @@
+const display = document.querySelector('.display');
+const buttons= document.querySelectorAll('button');
 function add(a,b){
     return a+b;
 }
@@ -20,3 +22,13 @@ let secondNum;
 function operator (operator,firstNum,secondNum){
     add()
 }
+
+function populateDisplay(){
+    buttons.forEach(button => {
+    button.addEventListener('click', ()=>{
+        display.textContent += button.textContent,'';
+          })
+    })
+}
+
+populateDisplay();
