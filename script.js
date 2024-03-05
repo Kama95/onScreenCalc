@@ -1,5 +1,5 @@
 const display = document.querySelector('.display');
-const buttons= document.querySelectorAll('button');
+const buttons= document.querySelectorAll('button:not(.clear, .equalSign');
 function add(a,b){
     return a+b;
 }
@@ -30,5 +30,6 @@ function populateDisplay(){
           })
     })
 }
+
 
 populateDisplay();
