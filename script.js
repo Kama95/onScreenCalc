@@ -19,6 +19,7 @@ function divide(a,b){
 let firstNum;
 let operation;
 let secondNum;
+let isClicked = true;
 
 function operator (firstNum,secondNum,operator){
     if ( operator ==='+'){
@@ -35,15 +36,36 @@ function operator (firstNum,secondNum,operator){
     }
 }
 
+
 function populateDisplay(){
     buttons.forEach(button => {
     button.addEventListener('click', ()=>{
         display.textContent += button.textContent,'';
-        firstNum = parseInt (button.textContent,10);
-        console.log (firstNum);
+        //firstNum = parseInt (button.textContent,10);
+        //console.log (firstNum);
           })
     })
 }
+
+function getNums(){
+buttons.forEach(button =>{
+    button.addEventListener ('click',()=>{
+        num = button.textContent;
+
+        if (isClicked){
+            firstNum=num;
+            isClicked=false
+        }
+        else {secondNum=num
+        isClicked = true 
+    }
+
+    } )
+})
+}
+
+
+getNums();
 
 
 function clearDisplay(){
