@@ -14,6 +14,7 @@
     justify-content: space-between;
     flex-direction: column;
     border: solid 2px black;
+    align-items: center
     ;
 }
 
