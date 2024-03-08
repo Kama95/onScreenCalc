@@ -17,13 +17,13 @@ function divide(a,b){
 }
 
 let firstNum;
-let operation;
+let operator;
 let secondNum;
 let isClicked = true;
 
 function operator (firstNum,secondNum,operator){
     if ( operator ==='+'){
-        return add(firstNum,secondNum);
+        return add(getNums);
     }
     else if (operator=== '-'){ 
         return subtract(firstNum,secondNum);
@@ -63,6 +63,7 @@ buttons.forEach(button =>{
     } )
 })
 }
+
 
 
 getNums();
