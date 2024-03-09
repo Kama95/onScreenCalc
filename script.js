@@ -21,9 +21,9 @@ function divide(a,b){
     return a/b;
 }
 
-let firstNum;
+let currentValue;
 let operator;
-let secondNum;
+let previousValue;
 let isClicked = true;
 
 /*function operator (firstNum,secondNum,operator){
@@ -42,16 +42,31 @@ let isClicked = true;
 }
 */
 
+function handleNum(num){
+    currentValue =+num;
+}
+function operation (op){
+    operator = op;
+    previousValue=currentValue;
+    currentValue;
+}
+
 function populateDisplay(){
     numbers.forEach(number => {
-    number.addEventListener('click', ()=>{
-        handleNum();
-        display.textContent += number.textContent,'';
-        //firstNum = parseInt (button.textContent,10);
-        //console.log (firstNum);
+    number.addEventListener('click', (e)=>{
+        handleNum(e.target.textContent);
+        current.textContent += currentValue,'';
           })
+        })
+
+    operators.forEach(operator => {
+        operator.addEventListener('click',(op)=>{
+            operation(op.target.textContent)
+
+        })
     })
 }
+
 
 /*function getNums(){
 buttons.forEach(button =>{
