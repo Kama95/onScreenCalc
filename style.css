@@ -36,3 +36,7 @@ button{
 .eight, .five, .two{
     margin-left: 40px;
 }
+
+.previous{
+    font-size: 15px;
+}

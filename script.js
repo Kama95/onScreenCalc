@@ -22,7 +22,7 @@ function divide(a,b){
 }
 
 let currentValue;
-let operator;
+let theOperator;
 let previousValue;
 let isClicked = true;
 
@@ -45,10 +45,11 @@ let isClicked = true;
 function handleNum(num){
     currentValue =+num;
 }
+
 function operation (op){
-    operator = op;
+    theOperator = op;
     previousValue=currentValue;
-    currentValue;
+    currentValue='';
 }
 
 function populateDisplay(){
@@ -62,37 +63,18 @@ function populateDisplay(){
     operators.forEach(operator => {
         operator.addEventListener('click',(op)=>{
             operation(op.target.textContent)
-
+            previous.textContent =` ${previousValue} ${theOperator}`;
+            current.textContent = currentValue;
         })
     })
 }
 
 
-/*function getNums(){
-buttons.forEach(button =>{
-    button.addEventListener ('click',()=>{
-        num = button.textContent;
-
-        if (isClicked){
-            firstNum=num;
-            isClicked=false
-        }
-        else {secondNum=num
-        isClicked = true 
-    }
-
-    } )
-})
-}*/
-
-
-
-//getNums();
-
 
 function clearDisplay(){
     clearButton.addEventListener('click', ()=>{
-        display.textContent =' ';
+        previousValue ='';
+        currentValue;
     })
 }
 
