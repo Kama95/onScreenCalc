@@ -1,6 +1,11 @@
 const display = document.querySelector('.display');
-const buttons= document.querySelectorAll('button:not(.clear, .equalSign');
-const clearButton=document.querySelector('.clear')
+const numbers = document.querySelectorAll('.number');
+const operators=document.querySelectorAll('.operator');
+const clearButton=document.querySelector('.clear');
+const equal = document.querySelector('.equalSign');
+const decimal =document.querySelector('.decimalPoint');
+const previous = document.querySelector('.previous');
+const current = document.querySelector('.current');
 
 function add(a,b){
     return a+b;
@@ -21,7 +26,7 @@ let operator;
 let secondNum;
 let isClicked = true;
 
-function operator (firstNum,secondNum,operator){
+/*function operator (firstNum,secondNum,operator){
     if ( operator ==='+'){
         return add(getNums);
     }
@@ -35,19 +40,20 @@ function operator (firstNum,secondNum,operator){
         return divide(firstNum,secondNum);
     }
 }
-
+*/
 
 function populateDisplay(){
-    buttons.forEach(button => {
-    button.addEventListener('click', ()=>{
-        display.textContent += button.textContent,'';
+    numbers.forEach(number => {
+    number.addEventListener('click', ()=>{
+        handleNum();
+        display.textContent += number.textContent,'';
         //firstNum = parseInt (button.textContent,10);
         //console.log (firstNum);
           })
     })
 }
 
-function getNums(){
+/*function getNums(){
 buttons.forEach(button =>{
     button.addEventListener ('click',()=>{
         num = button.textContent;
@@ -62,11 +68,11 @@ buttons.forEach(button =>{
 
     } )
 })
-}
+}*/
 
 
 
-getNums();
+//getNums();
 
 
 function clearDisplay(){
