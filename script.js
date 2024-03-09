@@ -33,7 +33,7 @@ const current = document.querySelector('.current');
             previous.textContent = previousValue + " " +theOperator;
             current.textContent = currentValue;
         })
-    })  
+    })
 
     equal.addEventListener('click', ()=> {
         performOperation();
@@ -81,10 +81,7 @@ function operation (op){
 
 
 function performOperation (){
-    //currentValue = (currentValue);
-    //previousValue =  (previousValue);
-    
-
+ 
    if ( theOperator === '+'){ 
     return add(previousValue,currentValue)
             }
@@ -98,9 +95,4 @@ function performOperation (){
     else if (theOperator ==='/'){
         return divide(currentValue,previousValue);
     }
-
-    //console.log (result);
 }
-
-;
-//populateDisplay();
