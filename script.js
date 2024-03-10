@@ -70,9 +70,15 @@ function handleNum(num){
 
 //function to handle operations. make currentValue into previous value
 function operation (op){
+    if (theOperator ===''){
     theOperator = op;
     previousValue = currentValue;
-    currentValue='';
+    currentValue='';}
+    else {
+        theOperator=op;
+        previousValue = performOperation()
+        currentValue ='';
+    }
 }
 
 
