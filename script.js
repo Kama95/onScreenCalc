@@ -2,6 +2,7 @@
 let currentValue ='';
 let theOperator ='';
 let previousValue ='';
+let isPressed = false;
 //let addition='';
 
 document.addEventListener ('DOMContentLoaded', function(){
@@ -22,8 +23,14 @@ const current = document.querySelector('.current');
         handleNum(e.target.textContent);
 
      currentValue = current.textContent += parseInt(number.textContent,10);
-     currentValue= Number(currentValue);
-
+     currentValue = Number(currentValue);
+     
+     if (isPressed){
+        currentValue = '';
+        current.textContent='';
+        isPressed=false;
+      }
+      
           })
         })
 
@@ -40,7 +47,8 @@ const current = document.querySelector('.current');
       const result = performOperation();
       if (result !== undefined){
         current.textContent = result;
-        previous.textContent ='';
+        previous.textContent =''
+        isPressed = true;
       }
       else if (result === undefined ){
         console.log (Error)
@@ -65,8 +73,8 @@ const current = document.querySelector('.current');
 
 //function to handle numbers//
 function handleNum(num){
-    currentValue += num;
-}
+    
+    currentValue+=num }
 
 //function to handle operations. make currentValue into previous value
 function operation (op){
