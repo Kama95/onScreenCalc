@@ -55,6 +55,11 @@ const current = document.querySelector('.current');
                current.textContent = currentValue;
                 })
         
+        decimal.addEventListener('click',()=>{
+            applyDecimal();
+            //updateDisplay();
+            current.textContent =currentValue;
+        })
 
 })
 
@@ -106,3 +111,11 @@ function performOperation (){
 return currentValue;
      
 }
+
+// Function to apply decimal point
+function applyDecimal() {
+    if (!currentValue.toString().includes('.')) {
+        currentValue += '.';
+    }
+}
+
