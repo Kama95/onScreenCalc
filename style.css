@@ -9,19 +9,23 @@
 .calculatorContainer{
     display: flex;
     padding: 50px;
-    width: 50%;
+    width: 450px;
     height: auto;
     justify-content: space-between;
     flex-direction: column;
     border: solid 2px black;
-    align-items: center
-    ;
+    align-items: center;
+    background-color: gray;
 }
 
 .display{
     width: 500px;
-    height: 100px;
+    height: 75px;
 border: dotted 1px grey;
+display: flex;
+flex-direction: column;
+padding: 10px;
+background-color: aliceblue;
 }
  
 .buttonRow {
@@ -38,14 +42,33 @@ button{
     border-radius: 5px;
     
 }
+
+.number, .decimalPoint{
+    border: 1px solid blue;
+}
+.decimalPoint:hover{
+    background-color:  rgb(90, 90, 223);
+}
+.number:hover{
+    background-color:  rgb(90, 90, 223);
+}
+.operator, .equalSign{
+    border: 1px solid green;
+}
 .clear{
     font-size: 30px;
     font-weight: 700;
+    border: 2px solid red;
 }
+
 /*.eight, .five, .two{
     margin-left: 40px;
 }*/
 
 .previous{
     font-size: 15px;
+}
+
+.current {
+    font-size: 25px;
 }
