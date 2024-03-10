@@ -39,12 +39,12 @@ const current = document.querySelector('.current');
     equal.addEventListener('click', ()=> {
       const result = performOperation();
       if (result !== undefined){
-        console.log (result);
+        current.textContent = result;
+        previous.textContent ='';
       }
       else if (result === undefined ){
         console.log (Error)
       }
-        //current.textContent = add(previousValue,currentValue);
         })
     
             clearButton.addEventListener('click', ()=>{
@@ -58,11 +58,12 @@ const current = document.querySelector('.current');
 
 })
 
-
+//function to handle numbers//
 function handleNum(num){
     currentValue += num;
 }
 
+//function to handle operations. make currentValue into previous value
 function operation (op){
     theOperator = op;
     previousValue = currentValue;
@@ -70,7 +71,7 @@ function operation (op){
 }
 
 
-
+//  Functions to add,subtract,multiply,divide //
 function add(previousValue,currentValue){
      return currentValue + previousValue;
 }
@@ -85,6 +86,7 @@ function divide(previousValue,currentValue){
     return previousValue/currentValue;
 }
 
+//function to perform operation by calling operations//
 
 function performOperation (){
     let answer;
@@ -104,20 +106,4 @@ function performOperation (){
     }
 return answer;
      
-
-    //if ( theOperator === "+"){
-        //return currentValue + previousValue;
-    //currentValue + previousValue;
-    //answer = currentValue+previousValue;
-    //}
-    /*else if (theOperator === '-'){ 
-        return subtract (previousValue,currentValue);
-    }
-    else if (theOperator === 'x'){
-        return multiply(currentValue,previousValue);
-    }
-    else if (theOperator ==='/'){
-        return divide(currentValue,previousValue);
-    }*/
-
 }
