@@ -89,21 +89,20 @@ function divide(previousValue,currentValue){
 //function to perform operation by calling operations//
 
 function performOperation (){
-    let answer;
 
     switch (theOperator){
         case '+' : 
-            answer = add(previousValue,currentValue);
+            currentValue = add(previousValue,currentValue);
         break;
         case '-':
-            answer = subtract(previousValue,currentValue)
+            currentValue = subtract(previousValue,currentValue)
         case 'x':
-            answer = multiply(previousValue,currentValue)
+            currentValue = multiply(previousValue,currentValue)
             break;
         case '/':
-            answer = divide(previousValue,currentValue)
+            currentValue = divide(previousValue,currentValue)
             break;
     }
-return answer;
+return currentValue;
      
 }
