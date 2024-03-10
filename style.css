@@ -30,6 +30,8 @@ border: dotted 1px grey;
     justify-content: center;
 }
 button{
+    width: 75px;
+    height: 75px;
     margin: 15px;
     padding: 15px;
 }
