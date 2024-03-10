@@ -2,6 +2,7 @@
 let currentValue ='';
 let theOperator ='';
 let previousValue ='';
+//let addition='';
 
 document.addEventListener ('DOMContentLoaded', function(){
 
@@ -36,37 +37,26 @@ const current = document.querySelector('.current');
     })
 
     equal.addEventListener('click', ()=> {
-        performOperation();
-        previous.textContent = performOperation();
+      const result = performOperation();
+      if (result !== undefined){
+        console.log (result);
+      }
+      else if (result === undefined ){
+        console.log (Error)
+      }
+        //current.textContent = add(previousValue,currentValue);
         })
-
     
             clearButton.addEventListener('click', ()=>{
                 previousValue = '';
                 currentValue = '';
                 theOperator= '';
                 previous.textContent = previousValue;
-                current.textContent = currentValue;
-            })
+               current.textContent = currentValue;
+                })
         
 
 })
-
-
-function add(previousValue,currentValue){
-
-    return previousValue + currentValue;
-}
-
-function subtract(previousValue,currentValue){
-    return previousValue-currentValue;
-}
-function multiply(previousValue,currentValue){
-    return previousValue*currentValue;
-}
-function divide(a,b){
-    return a/b;
-}
 
 
 function handleNum(num){
@@ -80,19 +70,50 @@ function operation (op){
 }
 
 
-function performOperation (){
- 
-   if ( theOperator === '+'){ 
-    return add(previousValue,currentValue)
-            }
 
-    else if (theOperator === '-'){ 
-        return subtract(currentValue,previousValue);
+function add(previousValue,currentValue){
+     return currentValue + previousValue;
+}
+
+function subtract(previousValue,currentValue){
+    return previousValue-currentValue;
+}
+function multiply(previousValue,currentValue){
+    return previousValue*currentValue;
+}
+function divide(previousValue,currentValue){
+    return previousValue/currentValue;
+}
+
+
+function performOperation (){
+    let answer;
+
+    switch (theOperator){
+        case '+' : 
+        answer = add(previousValue,currentValue);
+        break;
+        case '-':
+        answer = subtract(previousValue,currentValue)
+        default:
+            break;
+    }
+return answer;
+     
+
+    //if ( theOperator === "+"){
+        //return currentValue + previousValue;
+    //currentValue + previousValue;
+    //answer = currentValue+previousValue;
+    //}
+    /*else if (theOperator === '-'){ 
+        return subtract (previousValue,currentValue);
     }
     else if (theOperator === 'x'){
         return multiply(currentValue,previousValue);
     }
     else if (theOperator ==='/'){
         return divide(currentValue,previousValue);
-    }
+    }*/
+
 }
