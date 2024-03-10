@@ -91,11 +91,15 @@ function performOperation (){
 
     switch (theOperator){
         case '+' : 
-        answer = add(previousValue,currentValue);
+            answer = add(previousValue,currentValue);
         break;
         case '-':
-        answer = subtract(previousValue,currentValue)
-        default:
+            answer = subtract(previousValue,currentValue)
+        case 'x':
+            answer = multiply(previousValue,currentValue)
+            break;
+        case '/':
+            answer = divide(previousValue,currentValue)
             break;
     }
 return answer;
